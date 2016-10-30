@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<link rel="stylesheet" href="css/index.css" ><title>Bus tracker - TMESA</title>
+
+</head>
+<body onload="onLoad()"
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/admob.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
+	<script>
+	    if (typeof jQuery == "undefined") {
+	        var script = document.createElement("script");
+	        script.src = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js";
+	        document.write(script.outerHTML);
+	    }
+    </script>
+
+<script type="text/javascript" src="js/json2-min.js"></script>
+<script type="text/javascript" src="js/utility.js"></script>
+<script type="text/javascript" src="js/persist.js"></script>
+
+<div id="infoTable">
+			<table width="100%">
+				<tr  height="5px"><td></td></tr>
+				<tr>
+					<td >
+						<table width="95%" >
+							<tr>
+								<td>
+									&nbsp;<img width="27" src="images/menu/bus.png">&nbsp;
+								</td>
+								<td class="text04 font16" style="text-align:left;vertical-align:top;"> 
+									Quant trigarà el<br>bus en arribar<br>a la parada?
+								</td>
+							</tr>
+						</table>
+					</td>
+					<tr esconder="" height="10px"><td></td></tr>
+				</tr>
+				<tr esconder=""><td class="text05 font12">&nbsp;Linía</td></tr>
+				<tr esconder="" height="2px"><td></td></tr>
+				<tr esconder="">
+					<td>
+						<select name="IdLineaMenuQuan" id="IdLineaMenuQuan" class="text02 selectInfo" width="169" onChange="updateLineaMenu('IdLineaMenuQuan','IdSentidoMenuQuan','IdJornadaMenuQuan','IdParadaMenuQuan');">
+	        		<option value="0"  selected > -- Seleccioni una línia -- </option>
+	        	
+	    	   		<option value="1-34"  title="Sant Llorenç - Hospital"> L1. Hospital-St. Llorenç</option>
+	        	
+	    	   		<option value="1-33"  title="Sant Llorenç - Hospital"> L1. St. Llorenç-Hospital</option>
+	        	
+	    	   		<option value="2-40"  title="Les Arenes - Rambla Egara"> L2. Les Arenes-Rambla Egara</option>
+	        	
+	    	   		<option value="2-41"  title="Les Arenes - Rambla Egara"> L2. Rambla Egara-Les Arenes</option>
+	        	
+	    	   		<option value="2-7"  title="Les Arenes - Rambla Egara"> L2. Les Arenes-Rambla d Egara</option>
+	        	
+	    	   		<option value="2-8"  title="Les Arenes - Rambla Egara"> L2. Rambla d Egara-Les Arenes</option>
+	        	
+	    	   		<option value="3-11"  title="Les Arenes - La Grípia"> L3. La Grípia-La Maurina</option>
+	        	
+	    	   		<option value="3-12"  title="Les Arenes - La Grípia"> L3. La Maurina-La Grípia</option>
+	        	
+	    	   		<option value="4-1"  title="Can Parellada - Ca n'Aurell"> L4. Can Parellada -Ca n Aurel</option>
+	        	
+	    	   		<option value="4-2"  title="Can Parellada - Ca n'Aurell"> L4. Ca n Aurell-Can Parellada</option>
+	        	
+	    	   		<option value="5-13"  title="Pla del Bon Aire - Can Trias"> L5. Pla del Bon Aire-Can Tria</option>
+	        	
+	    	   		<option value="5-14"  title="Pla del Bon Aire - Can Trias"> L5. Can Trias-Pla del Bon Air</option>
+	        	
+	    	   		<option value="6-6"  title="Can Roca - La Cogullada"> L6. La Cogullada-Can Roca</option>
+	        	
+	    	   		<option value="6-5"  title="Can Roca - La Cogullada"> L6. Can Roca-La Cogullada</option>
+	        	
+	    	   		<option value="7-44"  title="Pla de Bon Aire - Can Jofresa"> L7. NORD (Pla del Bon Aire)-S</option>
+	        	
+	    	   		<option value="7-39"  title="Pla de Bon Aire - Can Jofresa"> L7. Can Jofresa              </option>
+	        	
+	    	   		<option value="7-25"  title="Pla de Bon Aire - Can Jofresa"> L7. Pla del Bon Aire-Can Jofr</option>
+	        	
+	    	   		<option value="8-18"  title="Avingudes"> L8. Avingudes-Avingudes</option>
+	        	
+	    	   		<option value="9-19"  title="Avingudes"> L9. Avingudes-Avingudes</option>
+	        	
+	    	   		<option value="10-21"  title="Les Fonts - Estació Nord"> L10. Estació del Nord-Les Fonts</option>
+	        	
+	    	   		<option value="10-20"  title="Les Fonts - Estació Nord"> L10. Les Fonts-Estació del Nord</option>
+	        	
+	    	   		<option value="11-22"  title="Hospital Exprés (Poble Nou-Hospital)"> LH. Poble Nou-Hospital</option>
+	        	
+	    	   		<option value="11-23"  title="Hospital Exprés (Poble Nou-Hospital)"> LH. Hospital-Poble Nou</option>
+	        	
+	    	   		<option value="12-26"  title="Can Gonteres - C. P. de Vista Alegre"> L12. Can Gonteres-C.P. de Vist</option>
+	        	
+	    	   		<option value="12-27"  title="Can Gonteres - C. P. de Vista Alegre"> L12. C.P. de Vista Alegre-Can </option>
+	        	
+	    	   		<option value="13-29"  title="Mercadal dels dimecres"> L14. Can Parellada -St.Llorenç</option>
+	        	
+	    	   		<option value="13-37"  title="Mercadal dels dimecres"> L14. Can Parellada -St. Llorenç</option>
+	        	
+	    	   		<option value="13-38"  title="Mercadal dels dimecres"> L14. St. Llorenç-Can Parellada </option>
+	        	
+	    	   		<option value="13-28"  title="Mercadal dels dimecres"> L14. St.Llorenç-Can Parellada</option>
+	        	
+	    	   		<option value="15-32"  title="Bus Dnit"> L16. Avingudes-Avingudes</option>
+	        	
+		  			</select>
+					</td>
+				</tr>
+				<tr esconder=""><td>&nbsp;</td></tr>
+				<tr esconder="">
+					<td class="text05 font12">
+						&nbsp;Parada
+					</td>
+				</tr>
+				<tr esconder="" height="2px"><td></td></tr>
+				<tr esconder="">
+					<td>
+						<select name="IdParadaMenuQuan" id="IdParadaMenuQuan" class="text02 selectInfo" width="169"  onChange="paradaSeleccionada2('IdLineaMenuQuan','IdSentidoMenuQuan','IdJornadaMenuQuan','IdParadaMenuQuan','BotonBuscar2','ca');">
+							
+		        			<option value="0"  selected > -- Seleccioni una línia -- </option>
+		        	
+						</select>
+					</td>
+				</tr>
+				<tr esconder=""><td>&nbsp;</td></tr>
+				<tr esconder="" height="2px"><td></td></tr>
+				<tr esconder=""><td class="text05 font12">&nbsp;Jornada</td></tr>
+				<tr esconder="" height="2px"><td></td></tr>
+				<tr esconder="">
+					<td>
+						<select name="IdJornadaMenuQuan" id="IdJornadaMenuQuan" class="text02 selectInfo" width="169" onChange="updateJornadaMenu2('IdLineaMenuQuan','IdSentidoMenuQuan','IdJornadaMenuQuan','IdParadaMenuQuan','BotonBuscar2');">
+	        			<option value="0" selected> -- Seleccioni una línia -- </option>
+						</select>
+					</td>
+				</tr>
+				<tr height="20px"><td>&nbsp;</td></tr>
+				<tr esconder="">
+					<td style="vertical-align:bottom;" aling="center">
+						<table width="100%" id="BotonBuscar2" style="display:none">
+							
+							<tr>
+								<td width="33px"></td>
+								<td>
+								<div class="botoBannerHoraris" title="Calcular" alt="Calcular" onClick="obtenerProximas('IdLineaMenuQuan','IdSentidoMenuQuan','IdJornadaMenuQuan','IdParadaMenuQuan','BotonBuscar2');">
+									Cercar
+								</div>
+								</td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr esconder="true"><td>&nbsp;</td></tr>
+				<tr esconder="true"><td class="font12 textAmarillo textVertialCentro">Exemple:</td></tr>
+				<tr esconder="true" height="15px;"><td></td></tr>
+				<tr esconder="true">
+					<td>
+						<table id="taulaEjemplo" width="100%">
+							<tr>
+								<td width="6px"></td>
+								<td class="font12 textAmarillo textVertialCentro">Linía</td>
+								<td class="font12 textAmarillo textVertialCentro">Destinació</td>
+								<td class="font12 textAmarillo textRight textVertialCentro" >Minuts</td>
+								<td width="6px"></td>
+							</tr>
+							<tr height="4px;">
+								<td colspan=5></td>
+							</tr>
+							<tr height="41px;">
+								<td class="quantTrigaraLeft"></td>
+								<td class="quantTrigaraCenter">
+									
+									<img src="DOCUMENTS/Menu/Linies/l1no.png" width="23px">
+								</td>
+								<td class="textVertialCentro quantTrigaraCenter">Hospital</td>
+								<td class="textRight textVertialCentro quantTrigaraCenter">0 min.</td>
+								<td class="quantTrigaraRight"></td>
+							</tr>
+							<tr height="2px;">
+								<td colspan=5></td>
+							</tr>
+						<tr height="4px;"><td></td></tr>
+							<tr height="41px;">
+								<td class="quantTrigaraLeft"></td>
+								<td class="quantTrigaraCenter">
+									
+									<img src="DOCUMENTS/Menu/Linies/l2no.png" width="23px">
+								</td>
+								<td class="quantTrigaraCenter" style="vertical-align:middle;">Les Arenes</td>
+								<td class="textRight textVertialCentro quantTrigaraCenter">2 min.</td>
+								<td class="quantTrigaraRight"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr esconder="" style="display:;"><td id="taulaInfo">&nbsp;</td></tr>
+				<tr><td>&nbsp;</td></tr>
+		</table>
+				
+		</div>
+</body>
+</html>

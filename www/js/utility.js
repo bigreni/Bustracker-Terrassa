@@ -351,7 +351,7 @@ function obtenerProximas(id_idLinia,id_idSentido,id_IdJornada,id_IdParada){
 		dataType: 'text',
 		success: function(respuesta) {
             $('tr[esconder="true"]').css("display","none");
-            $('#taulaInfo').html(StrRespuesta);
+            $('#taulaInfo').html(respuesta);
 			$('tr[esconder="false"]').css("display","block");
 		},
 		error: function() {

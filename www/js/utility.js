@@ -345,19 +345,29 @@ function obtenerProximas(id_idLinia,id_idSentido,id_IdJornada,id_IdParada){
 	
 	//prompt("",'consultes.asp?proces=ConsultarProximos&idLinia='+idLinia+'&idSentido='+idSentido+'&IdJornada='+IdJornada2+'&NomParada='+NomParada);
 	$.ajax({
-		url:	'http://www.tmesa.com/consultes.asp?nocache=' + Math.random(),
-		type: 'POST',
-		data: 'proces=ConsultarProximos&idLinia='+idLinia+'&idSentido='+idSentido+'&IdJornada='+IdJornada2+'&NomParada='+NomParada,
-		dataType: 'text',
-		success: function(respuesta) {
-            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img')
-            $('tr[esconder="true"]').css("display","none");
-            $('#taulaInfo').html(respuesta);
-			$('tr[esconder="false"]').css("display","block");
-		},
-		error: function() {
-			alert("error");
-		}
+	    url: 'http://www.tmesa.com/consultes.asp?nocache=' + Math.random(),
+	    type: 'POST',
+	    data: 'proces=ConsultarProximos&idLinia=' + idLinia + '&idSentido=' + idSentido + '&IdJornada=' + IdJornada2 + '&NomParada=' + NomParada,
+	    dataType: 'text',
+	    success: function (respuesta) {
+	        respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+	        respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            respuesta = respuesta.replace('DOCUMENTS/Menu/Linies', 'img');
+            $('tr[esconder="true"]').css("display", "none");
+	        $('#taulaInfo').html(respuesta);
+	        $('tr[esconder="false"]').css("display", "block");
+	    },
+	    error: function () {
+	        alert("error");
+	    }
 	});
 }
 

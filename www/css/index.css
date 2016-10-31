@@ -169,7 +169,7 @@ div.seleccion
 div.cabeza
 {
 	padding : 10px;
-	background-color: #fff700;	
+	background-color: #ff4848;	
 }
 
 div.linea-cabeza
@@ -290,7 +290,64 @@ option.displayNone
 	display:none;
 }
 
+.textAmarillo{
+	color:#333;
+	font-weight:bold;
+}
 
+.textRight{
+	text-align:right;
+}
+
+.textVertialCentro{
+	vertical-align:middle;
+}
+
+.font12{
+	font-size:12px;
+}
+
+.text05{
+	color:#ffffff;
+	text-align:left;
+	font-family:Helvetica,Arial,"Times New Roman",Georgia,Serif;
+	font-size:12px;
+}
+.botoBannerHoraris{
+	position:relative;
+	width:110px;
+	height:33px;
+	cursor:pointer;
+	font-family:Helvetica;	
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+	display:table-cell; 
+	vertical-align:middle;
+	color:white;
+}
+.quantTrigaraLeft{
+	background:transparent url('../img/paradaL.jpg') no-repeat top center; ;
+}
+.quantTrigaraCenter{
+	background:transparent url('../img/paradaC.jpg') repeat-x top center; ;
+}
+.quantTrigaraRight{
+	background:transparent url('../img/paradaR.jpg') no-repeat top center; ;
+}
+
+.font14{
+	font-size:14px;
+}
+.font16{
+	font-size:16px;
+}
+.font18{
+	font-size:18px;
+}
+.textBold{
+	font-weight:bold;
+}
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {

@@ -131,7 +131,7 @@
         else if(p < currentVersion) //if app upgraded
         {
 //Spanish
-            navigator.notification.alert('Para ver el menú del teléfono, por favor, arrastra la pantalla desde arriba hacia abajo o desde abajo hacia arriba.', initApp, 'Gracias por descargar la app', 'OK');
+            navigator.notification.alert('Para ver el menú del teléfono, por favor, arrastra la pantalla desde arriba hacia abajo o desde abajo hacia arriba.', initApp, 'Gracias por actualizar la app', 'OK');
             window.localStorage.setItem("currentVersion", currentVersion);            
         }
         else

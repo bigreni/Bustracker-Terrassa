@@ -6,9 +6,28 @@
 <meta name="viewport"
 	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 	<link rel="stylesheet" href="css/index.css" ><title>Bus tracker - TMESA</title>
+        <style>
+            /* Hide all the app pages until jQuery Mobile inits to
+               avoid the Flash of Unstyled Content */
+            [data-role=page] { display: none; }
 
+            #splashscreen {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index:1001;
+                background: lightgrey;
+                text-shadow: none;
+                color: black;
+            }
+        </style>
 </head>
-<body onload="onLoad()">
+<body>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/admob.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
@@ -20,9 +39,21 @@
 	    }
     </script>
 
-<script type="text/javascript" src="js/json2-min.js"></script>
 <script type="text/javascript" src="js/utility.js"></script>
-<script type="text/javascript" src="js/persist.js"></script>
+       <div id="splashscreen" class="splashscreen" style="display: none"></div>
+        <script>
+            // Show the splash screen with a loading message
+            // Handler to hide the message when the loading stops
+            window.onload = function() {
+                onLoad();
+                document.getElementById("splashscreen").style.display = 'none';
+            };
+            document.getElementById("splashscreen").innerHTML = 'Loading...';
+            document.getElementById("splashscreen").style.display = 'block';
+            $(window).ready(function() {
+            $('#splashscreen').hide();
+            });
+        </script>
 
 <div id="infoTable">
 			<table width="100%">
@@ -190,5 +221,8 @@
 		</table>
 				
 		</div>
+        <script>
+
+        </script>
 </body>
 </html>

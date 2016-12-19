@@ -170,6 +170,7 @@ div.cabeza
 {
 	padding : 10px;
 	background-color: #ff4848;	
+    color: #333;
 }
 
 div.linea-cabeza
@@ -308,10 +309,10 @@ option.displayNone
 }
 
 .text05{
-	color:#ffffff;
+	color:#333;
 	text-align:left;
 	font-family:Helvetica,Arial,"Times New Roman",Georgia,Serif;
-	font-size:12px;
+	font-size:16px;
 }
 .botoBannerHoraris{
 	position:relative;
@@ -327,13 +328,13 @@ option.displayNone
 	color:white;
 }
 .quantTrigaraLeft{
-	background:transparent url('../img/paradaL.jpg') no-repeat top center; ;
+	/*background:transparent url('../img/paradaL.jpg') no-repeat top center; ;*/
 }
 .quantTrigaraCenter{
-	background:transparent url('../img/paradaC.jpg') repeat-x top center; ;
+	/*background:transparent url('../img/paradaC.jpg') repeat-x top center; ;*/
 }
 .quantTrigaraRight{
-	background:transparent url('../img/paradaR.jpg') no-repeat top center; ;
+	/*background:transparent url('../img/paradaR.jpg') no-repeat top center; ;*/
 }
 
 .font14{

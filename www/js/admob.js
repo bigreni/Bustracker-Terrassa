@@ -62,10 +62,9 @@
 
    function checkFirstUse()
     {
+            $(".dropList").select2();
             initApp();
             askRating();
-            $(".dropList").select2();
-
     }
 
 function askRating()

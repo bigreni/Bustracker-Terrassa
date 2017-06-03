@@ -25,8 +25,8 @@ function updateLineaMenu(id_idLinia,id_idSentido,id_IdJornada,id_IdParada,BotonB
 	//prompt("",'consultes.asp?proces=PassaLinea&idLinea='+val+'&idSentido='+idSentido);
 	if( val > 0 ){
 		$.ajax({
-            beforeSend: function() {$.mobile.loading( "show" ); }, //Show spinner
-            complete: function() { $.mobile.loading( "hide" ); }, //Hide spinner
+            //beforeSend: function() {$.mobile.loading( "show" ); }, //Show spinner
+            //complete: function() { $.mobile.loading( "hide" ); }, //Hide spinner
 			url:	'http://www.tmesa.com/consultes.asp?nocache=' + Math.random(),
 			type: 'POST',
 			data: 'proces=PassaLinea&idLinea='+val+'&idSentido='+idSentido,
@@ -70,6 +70,7 @@ function updateLineaMenu(id_idLinia,id_idSentido,id_IdJornada,id_IdParada,BotonB
 					$('#'+id_IdJornada).append('<option value="0" title="'+etEscollirParadaOr+'" selected>'+etEscollirParadaOr+'</option>');
 				}
 				ocultaBuscar(id_IdJornada,BotonBuscar);
+                $(".dropList").select2();
 				
 			},
 			error: function() {
@@ -96,8 +97,8 @@ function updateJornadaMenu(id_idLinia,id_idSentido,id_IdJornada,id_IdParada,Boto
 	if( val2 > 0 ){
 		//prompt("",'consultes.asp?proces=PassaSentit&idSentit='+val2+'&idJornada='+val);
 		$.ajax({
-            beforeSend: function() {$.mobile.loading( "show" ); }, //Show spinner
-            complete: function() { $.mobile.loading( "hide" ); }, //Hide spinner
+            //beforeSend: function() {$.mobile.loading( "show" ); }, //Show spinner
+            //complete: function() { $.mobile.loading( "hide" ); }, //Hide spinner
 			url:	'http://www.tmesa.com/consultes.asp?nocache=' + Math.random(),
 			type: 'POST',
 			data: 'proces=PassaSentit&idSentit='+val2+'&idJornada='+val,
@@ -120,6 +121,7 @@ function updateJornadaMenu(id_idLinia,id_idSentido,id_IdJornada,id_IdParada,Boto
 					}
 				}
 				ocultaBuscar(id_IdJornada,BotonBuscar);
+                $(".dropList").select2();
 			},
 			error: function() {
 				
@@ -215,8 +217,8 @@ function paradaSeleccionada2(id_idLinia,id_idSentido,id_IdJornada,id_IdParada,Bo
 	if( idSentido > 0 ){
 		//prompt("",'consultes.asp?proces=obteJornades&idSentit='+idSentido+'&parada='+valParada+'&idLinea='+val+'&idioma='+pLang);
 		$.ajax({
-            beforeSend: function() {$.mobile.loading( "show" ); }, //Show spinner
-            complete: function() { $.mobile.loading( "hide" ); }, //Hide spinner
+            //beforeSend: function() {$.mobile.loading( "show" ); }, //Show spinner
+            //complete: function() { $.mobile.loading( "hide" ); }, //Hide spinner
 			url:	'http://www.tmesa.com/consultes.asp?nocache=' + Math.random(),
 			type: 'POST',
 			data: 'proces=obteJornades&idSentit='+idSentido+'&parada='+valParada+'&idLinea='+val+'&idioma='+pLang,
@@ -355,8 +357,8 @@ function obtenerProximas(id_idLinia,id_idSentido,id_IdJornada,id_IdParada){
 	
 	//prompt("",'consultes.asp?proces=ConsultarProximos&idLinia='+idLinia+'&idSentido='+idSentido+'&IdJornada='+IdJornada2+'&NomParada='+NomParada);
 	$.ajax({
-        beforeSend: function() {$.mobile.loading( "show" ); }, //Show spinner
-        complete: function() { $.mobile.loading( "hide" ); }, //Hide spinner
+        //beforeSend: function() {$.mobile.loading( "show" ); }, //Show spinner
+        //complete: function() { $.mobile.loading( "hide" ); }, //Hide spinner
 	    url: 'http://www.tmesa.com/consultes.asp?nocache=' + Math.random(),
 	    type: 'POST',
 	    data: 'proces=ConsultarProximos&idLinia=' + idLinia + '&idSentido=' + idSentido + '&IdJornada=' + IdJornada2 + '&NomParada=' + NomParada,
